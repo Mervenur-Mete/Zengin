@@ -1,0 +1,80 @@
+﻿@model Zng.Models.Hizmetler
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="content-lg container">
+    <h2>SİL</h2>
+
+    <h3>Silmek istediğinize emin misiniz?</h3>
+    <div>
+        <h4>Hizmetler</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Baslik)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Baslik)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Icerik)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Icerik)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.ImageName)
+            </dt>
+
+            <dd>
+                <img class="img-thumbnail" src="~/Images/@Model.ImageName" alt="Urun Resmi" width="300" height="200">
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Tarih)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Tarih)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Description)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Description)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Keyword)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Keyword)
+            </dd>
+
+        </dl>
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-actions no-color">
+                <input type="submit" value="SİL" class="btn-danger" />
+
+
+                <a class="btn btn-dark" href="/Hizmetler/Index">
+                    <i class="fa fa-share"></i> Listeye Dön
+                </a>
+            </div>
+        }
+    </div>
+
+</div>

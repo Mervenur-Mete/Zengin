@@ -1,0 +1,75 @@
+﻿@model Zng.Models.Hizmetler
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="content-lg container">
+    <h2>DETAY</h2>
+
+    <div>
+        <h4>Hizmetler</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Baslik)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Baslik)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Icerik)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Icerik)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.ImageName)
+            </dt>
+
+            <dd>
+                <img class="img-thumbnail" src="~/Images/@Model.ImageName" alt="Urun Resmi" width="300" height="200">
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Tarih)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Tarih)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Description)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Description)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Keyword)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Keyword)
+            </dd>
+
+        </dl>
+    </div>
+    <p>
+        <a class="btn btn-success" href="/Hizmetler/Edit/@Model.Id">
+            <! btn-block ile tüm satırı kaplayan bir bton oluşturulur-->
+            <i class="fa fa-pencil-square-o"></i> Düzenle  <! düzenle ikonunu oluşturur-->
+        </a>
+        <a class="btn btn-dark" href="/Hizmetler/Index">
+            <i class="fa fa-share"></i> Listeye Dön
+        </a>
+    </p>
+</div>
+
+
